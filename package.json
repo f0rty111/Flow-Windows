@@ -1,0 +1,48 @@
+{
+  "name": "flow-windows",
+  "version": "1.0.0",
+  "description": "Flow-inspired Windows desktop companion",
+  "main": "src/main.js",
+  "author": "Flow Windows Community",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "org.flowtube.windows",
+    "productName": "Flow for Windows",
+    "asar": true,
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ],
+          "artifactName": "Flow-Windows-${version}-Setup.${ext}"
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ],
+          "artifactName": "Flow-Windows-${version}-Portable.${ext}"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}

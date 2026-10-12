@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flow for Windows</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><div class="logo">f</div><div><strong>Flow</strong><small>FOR WINDOWS</small></div></div>
+  <button class="nav active" data-page="home"><span>⌂</span> Home</button>
+  <button class="nav" data-page="music"><span>♫</span> Music</button>
+  <button class="nav" data-page="shorts"><span>▣</span> Shorts</button>
+  <button class="nav" data-page="subscriptions"><span>▤</span> Subscriptions</button>
+  <div class="side-label">YOUR SPACE</div>
+  <button class="nav" data-page="library"><span>▧</span> Library</button>
+  <button class="nav" data-page="history"><span>◷</span> History</button>
+  <div class="sidebar-bottom"><div class="privacy"><span class="dot"></span><div><b>Desktop mode</b><small>Local app shell</small></div></div><button id="theme" class="theme">◐ &nbsp; Toggle appearance</button></div>
+</aside>
+<main class="main">
+  <header><div class="crumb">Discover <span>/</span> <b id="pageName">Home</b></div><div class="header-right"><span class="secure">● Secure connection</span><button id="back" class="icon-btn" title="Back">←</button><button id="forward" class="icon-btn" title="Forward">→</button><button id="reload" class="icon-btn" title="Reload">↻</button></div></header>
+  <section id="welcome" class="welcome">
+    <div class="hero"><div class="eyebrow">YOUR VIDEO UNIVERSE</div><h1>Good content.<br><em>One calm space.</em></h1><p>A clean desktop home for video, music and discovery.</p>
+      <form id="searchForm"><span>⌕</span><input id="search" placeholder="Search videos, artists, topics..." autocomplete="off"><button>Search ↗</button></form>
+      <div class="quick"><button data-page="music">♫ &nbsp; Explore music</button><button data-page="subscriptions">▤ &nbsp; Subscriptions</button></div>
+    </div>
+    <div class="feature-row"><div class="feature"><span class="feature-icon">◈</span><b>Made for desktop</b><small>Keyboard-friendly navigation</small></div><div class="feature"><span class="feature-icon">◉</span><b>Your browser session</b><small>Web content runs in its own view</small></div><div class="feature"><span class="feature-icon">◌</span><b>Minimal by design</b><small>Focus on what you want to watch</small></div></div>
+    <div class="notice"><b>About this Windows edition</b><p>This is a community desktop companion, not a native port of the Android Flow app. Video and music pages are provided by YouTube. FlowNeuro, SponsorBlock, DeArrow, downloads, and other Android-only features are not implemented here.</p></div>
+  </section>
+  <section id="browserPanel" class="browser-panel hidden">
+    <div class="browser-toolbar"><div><span class="live-dot"></span><b id="browserTitle">YouTube</b><small id="browserUrl">youtube.com</small></div><button id="openExternal">Open in browser ↗</button></div>
+    <webview id="content" src="https://www.youtube.com/" allowpopups partition="persist:flow-session"></webview>
+  </section>
+  <footer><span>FLOW WINDOWS <b>•</b> COMMUNITY EDITION</span><span>Built for Windows 10 / 11</span></footer>
+</main>
+<script src="renderer.js"></script>
+</body></html>

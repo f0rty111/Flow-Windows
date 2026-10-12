@@ -1,0 +1,1 @@
+This companion shell is separately authored. The original Flow Android project is licensed under GPL-3.0; consult the original repository for its source and license terms. This wrapper does not claim to be an official Flow release.
