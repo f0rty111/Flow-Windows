@@ -21,23 +21,19 @@
       "src/**/*",
       "package.json"
     ],
-    "win": {
-      "target": [
-        {
-          "target": "nsis",
-          "arch": [
-            "x64"
-          ],
-          "artifactName": "Flow-Windows-${version}-Setup.${ext}"
-        },
-        {
-          "target": "portable",
-          "arch": [
-            "x64"
-          ],
-          "artifactName": "Flow-Windows-${version}-Portable.${ext}"
-        }
-      ]
+"win": {
+  "target": [
+    "nsis",
+    "portable"
+  ],
+  "artifactName": "Flow-Windows-${version}-${arch}.${ext}"
+},
+"nsis": {
+  "oneClick": false,
+  "allowToChangeInstallationDirectory": true,
+  "createDesktopShortcut": true
+}
+
     },
     "nsis": {
       "oneClick": false,
