@@ -1,0 +1,36 @@
+
+name: Build Flow Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Windows EXE
+        run: npm run dist --if-present
+
+      - name: Upload build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: Flow-Windows-Build
+          path: |
+            dist/**
+            release/**
+          if-no-files-found: error
